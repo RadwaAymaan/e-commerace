@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/e-commerace/static/css/main.78db4353.css",
+    "main.js": "/e-commerace/static/js/main.560edca4.js",
+    "static/media/fa-solid-900.ttf": "/e-commerace/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/fa-brands-400.ttf": "/e-commerace/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/fa-solid-900.woff2": "/e-commerace/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/fa-brands-400.woff2": "/e-commerace/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/fa-regular-400.ttf": "/e-commerace/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/fa-regular-400.woff2": "/e-commerace/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/freshcart-logo.svg": "/e-commerace/static/media/freshcart-logo.53f7a424c3aedc30a0fb46dc2278137c.svg",
+    "static/media/fa-v4compatibility.ttf": "/e-commerace/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/e-commerace/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "static/media/logo.svg": "/e-commerace/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/slick.svg": "/e-commerace/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/e-commerace/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/e-commerace/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/e-commerace/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/e-commerace/index.html",
+    "main.78db4353.css.map": "/e-commerace/static/css/main.78db4353.css.map",
+    "main.560edca4.js.map": "/e-commerace/static/js/main.560edca4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78db4353.css",
+    "static/js/main.560edca4.js"
+  ]
+}
