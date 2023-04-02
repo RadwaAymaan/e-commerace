@@ -47,7 +47,7 @@ function App() {
       {path:'register',element:<Register/>},
       {path:'cart',element:<Cart route = {route}/>},
       {path:'categories',element:<Categories route = {route}/>},
-      {path:'*',element:<NotFound/>},
+      {path:'*',element:<Login saveUseData={saveUseData}/>},
     ]}
   ])
   return <>
