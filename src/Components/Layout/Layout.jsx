@@ -12,11 +12,14 @@ import { Navigate, Outlet, useNavigate } from 'react-router-dom'
     // <Navigate to="/login" state={{ todos: []}} replace={true} />
   }
    return <>
+   <div className='pt-5'>
    <Navbar  userDate={userDate} logout={logout}/>
    <div className="container">
    <Outlet></Outlet>
    </div>
    <Footer/>
+   </div>
+  
    </>
  }
  

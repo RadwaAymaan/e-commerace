@@ -22,7 +22,7 @@ import Slider from "react-slick";
     slidesToScroll: 1
   }; 
    return <>
-    <Slider {...settings} className='py-3 category-slide'>
+    <Slider {...settings} className='py-4 category-slide'>
     {categories?.map((category)=><div key={category._id}>
       <img className='w-100' height={200} src={category.image} alt="" />
       <h2 className='h6 pt-2'>{category.name}</h2>

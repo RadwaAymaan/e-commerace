@@ -3,10 +3,10 @@
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import Slider from "react-slick";
+import $ from 'jquery'
 
- export default function ProductDetails() {
+export default function ProductDetails() {
   const [productsDetails , setproductsDetails ] = useState(null)
-  const [isLoadding, setisLoadding] = useState(false)
   let parmas = useParams();
   console.log(parmas);
 
@@ -18,10 +18,11 @@ import Slider from "react-slick";
     slidesToScroll: 1
   };
   async function getProductsDetails(id){
-  setisLoadding(true)
+  // setisLoadding(true)
   let {data} = await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`)
   setproductsDetails(data.data);
-  setisLoadding(false)
+  // setisLoadding(false)
+  $('.loading').fadeOut(2000);
   }
   useEffect(()=>{
    getProductsDetails(parmas.id);
@@ -29,9 +30,9 @@ import Slider from "react-slick";
    return <>
  
    <div className="row py-3 align-items-center justify-content-center">
-   {isLoadding?<div className='text-center align-items-center'>
-    <i className='fas fa-spinner fa-spin fa-2x text-main'></i>
-   </div>:
+   <div className='position-fixed top-0 end-0 start-0 bottom-0 loading bg-main'>
+    <i className='fas fa-spinner fa-spin fa-4x text-white'></i>
+    </div>
    <>
     <div className="col-md-4">
    <Slider {...settings}>
@@ -51,7 +52,6 @@ import Slider from "react-slick";
           <button className='btn bg-main text-white w-100'>+ Add</button>
    </div>
    </>
-   } 
    </div>
    </>
  }

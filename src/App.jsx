@@ -11,9 +11,17 @@ import Categories from './Components/Categories/Categories'
 import Cart from './Components/Cart/Cart'
 import NotFound from './Components/NotFound/NotFound'
 import Login from './Components/Login/Login';
+import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
+import ResetPassword from './Components/ResetPassword/ResetPassword';
+import VerifyCode from './Components/VerifyCode/VerifyCode';
+import Checkout from './Components/Checkout/Checkout';
 import { useEffect, useState } from 'react';
 import jwtDecode from 'jwt-decode';
-
+import { CounterContextProvider } from './Context/CounterContext';
+import { CartContextProvider } from './Context/CartContext';
+import toast, { Toaster } from 'react-hot-toast';
+import { Offline, Online } from "react-detect-offline";
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   useEffect(()=>{
@@ -27,31 +35,31 @@ function App() {
     let decodedToken = jwtDecode(encodedToken)
     setuserDate(decodedToken);
   }
-  function route(props){
-    if(localStorage.getItem('userToken') == null){
-      return <Navigate to="/login" />
-    }
-    else{
-      return props.childern;
-      // console.log(props.childern);
-    }
-  }
 
   let routers  = createBrowserRouter([
     {path:'',element:<Layout userDate={userDate} setuserDate = {setuserDate}/> ,children:[
-      {index:true,element:<Home route = {route}/>},
+      {index:true,element:<ProtectedRoute><Home/></ProtectedRoute> },
       {path:'login',element:<Login saveUseData={saveUseData}/>},
-      {path:'mainSlide',element:<MainSlide route = {route}/>},
-      {path:'products',element: <Products route = {route}/>},
-      {path:'productDetails/:id',element: <ProductDetails route = {route}/>},
+      {path:'mainSlide',element:<ProtectedRoute><MainSlide/></ProtectedRoute> },
+      {path:'products',element:<ProtectedRoute><Products/></ProtectedRoute> },
+      {path:'productDetails/:id',element: <ProtectedRoute><ProductDetails/></ProtectedRoute> },
       {path:'register',element:<Register/>},
-      {path:'cart',element:<Cart route = {route}/>},
-      {path:'categories',element:<Categories route = {route}/>},
-      {path:'*',element:<Login saveUseData={saveUseData}/>},
+      {path:'forget-password',element:<ForgetPassword/>},
+      {path:'reset-password',element:<ResetPassword/>},
+      {path:'verifyCode',element:<VerifyCode/>},
+      {path:'cart',element:<ProtectedRoute><Cart/></ProtectedRoute> },
+      {path:'checkout/:cartId',element:<ProtectedRoute><Checkout/></ProtectedRoute> },
+      {path:'categories',element:<ProtectedRoute><Categories/></ProtectedRoute> },
+      {path:'*',element:<NotFound/>},
     ]}
   ])
-  return <>
-    <RouterProvider router={routers}></RouterProvider>
+
+  return <> <CartContextProvider>
+  {/* <Online>Only shown when you're online</Online> */}
+  <Offline><div className='network'><i className="fa-solid fa-wifi text-danger"></i> Only shown offline (surprise!)</div> </Offline>
+  <Toaster/>
+  <RouterProvider router={routers}></RouterProvider>
+  </CartContextProvider>
   </>
 }
 

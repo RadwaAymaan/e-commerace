@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Formik, useFormik } from 'formik'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup'
 import styles from '../Login/Login.module.css'
 
@@ -52,8 +52,10 @@ import styles from '../Login/Login.module.css'
    {formik.touched.password && formik.errors.password ?(<div className='alert alert-danger'>{formik.errors.password}</div>) : null}  
 
    {formik.touched.phone && formik.errors.phone ?(<div className='alert alert-danger'>{formik.errors.phone}</div>) : null}  
-   {loading?<button disabled={!(formik.isValid && formik.dirty)} className='btn bg-main text-white' type='button'><i className='fas fa-spinner fa-spin'></i></button>:<button disabled={!(formik.isValid && formik.dirty)} type='submit' className='btn bg-main text-white'>Login</button>
-}
+   {loading?<button disabled={!(formik.isValid && formik.dirty)} className='btn bg-main text-white' type='button'><i className='fas fa-spinner fa-spin'></i></button>:<button disabled={!(formik.isValid && formik.dirty)} type='submit' className='btn bg-main text-white'>Login</button>}
+  <button className='btn bg-main text-white d-inline-block mx-2'>
+  <Link to={'/forget-password'}>Forget Password</Link>
+  </button>
     </form>
    </div>
    </>

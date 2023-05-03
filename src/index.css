@@ -8,7 +8,9 @@
     --font-family:'Encode Sans Expanded', sans-serif;
     --rating-color:#ffc908;
 }
-
+.border-main{
+    border: 1px solid var(--main-color) !important;
+}
 body{
     font-family: var(--font-family) !important;
 }
@@ -59,4 +61,18 @@ a , a:hover{
 }
 .category-slide {
     height: 200px;
+}
+.network{
+    background-color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: var(--shadow);
+}
+.loading{
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
