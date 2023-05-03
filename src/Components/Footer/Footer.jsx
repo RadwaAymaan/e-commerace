@@ -11,7 +11,7 @@
         <input type="text" placeholder='Email' className='form-control'/>
       </div>
       <div className="col-md-2">
-        <button className='btn bg-main'>Share App Link</button>
+        <button className='btn bg-main'>Share App Link</button> 
       </div>
     </div>
    </form>
