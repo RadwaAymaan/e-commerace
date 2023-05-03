@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/e-commerace/static/css/main.78db4353.css",
-    "main.js": "/e-commerace/static/js/main.89fe68ee.js",
+    "main.css": "/e-commerace/static/css/main.9e7d6c97.css",
+    "main.js": "/e-commerace/static/js/main.dc8280e9.js",
     "static/media/fa-solid-900.ttf": "/e-commerace/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/fa-brands-400.ttf": "/e-commerace/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
     "static/media/fa-solid-900.woff2": "/e-commerace/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
@@ -17,11 +17,11 @@
     "static/media/slick.ttf": "/e-commerace/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/e-commerace/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/e-commerace/index.html",
-    "main.78db4353.css.map": "/e-commerace/static/css/main.78db4353.css.map",
-    "main.89fe68ee.js.map": "/e-commerace/static/js/main.89fe68ee.js.map"
+    "main.9e7d6c97.css.map": "/e-commerace/static/css/main.9e7d6c97.css.map",
+    "main.dc8280e9.js.map": "/e-commerace/static/js/main.dc8280e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.78db4353.css",
-    "static/js/main.89fe68ee.js"
+    "static/css/main.9e7d6c97.css",
+    "static/js/main.dc8280e9.js"
   ]
 }
