@@ -18,9 +18,9 @@ import { cartContext } from '../../Context/CartContext'
       <li className="nav-item">
           <Link className="nav-link" to="/">Home</Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link className="nav-link" to="categories">Categories</Link>
-        </li>
+        </li> */}
         {/* <li className="nav-item">
           <Link className="nav-link " to="brands">Brands</Link>
         </li> */}
