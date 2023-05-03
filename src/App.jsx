@@ -50,7 +50,7 @@ function App() {
       {path:'cart',element:<ProtectedRoute><Cart/></ProtectedRoute> },
       {path:'checkout/:cartId',element:<ProtectedRoute><Checkout/></ProtectedRoute> },
       {path:'categories',element:<ProtectedRoute><Categories/></ProtectedRoute> },
-      {path:'*',element:<NotFound/>},
+      {path:'*',element:<Login/>},
     ]}
   ])
 
