@@ -1,15 +1,30 @@
- import React, { useEffect, useState } from 'react'
+ import React, { useContext, useEffect, useState } from 'react'
  import styles from '../ProductDetails/ProductDetails.module.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import Slider from "react-slick";
 import $ from 'jquery'
+import { cartContext } from '../../Context/CartContext';
+import { toast } from 'react-hot-toast';
 
 export default function ProductDetails() {
   const [productsDetails , setproductsDetails ] = useState(null)
   let parmas = useParams();
   console.log(parmas);
+  let{addToCart,setnumOfCartItems} = useContext(cartContext);
 
+  async function addProduct(productId){
+   let response = await addToCart(productId);
+   if(response?.data?.status === 'success'){
+     setnumOfCartItems(response.data.numOfCartItems)
+     toast.success(response.data.message,{duration:2000});
+     console.log(response.data.message);
+   } 
+   else{
+     toast.error('Error',{duration:2000});
+   }
+   console.log(response.data);
+  }
   const settings = {
     dots: true,
     infinite: true,
@@ -49,7 +64,7 @@ export default function ProductDetails() {
           <i className='fas fa-star rating-color'>{productsDetails?.ratingsAverage}</i>
           </span>
           </div>
-          <button className='btn bg-main text-white w-100'>+ Add</button>
+          <button  onClick={()=>addProduct(parmas.id)}className='btn bg-main text-white w-100'>+ Add</button>
    </div>
    </>
    </div>
