@@ -22,7 +22,7 @@ export function CartContextProvider(props){
 
    let headers = {token:localStorage.getItem('userToken')}
     function addToCart(productId){
-    return  axios.post(`https://route-ecommerce.onrender.com/api/v1/cart`,
+    return  axios.post(`https://ecommerce.routemisr.com/api/v1/cart`,
     {productId:productId},
     {
         headers:headers
@@ -30,19 +30,19 @@ export function CartContextProvider(props){
       .catch((error)=>error)
     }
     function getLoggedCart(){
-        return axios.get(`https://route-ecommerce.onrender.com/api/v1/cart`,
+        return axios.get(`https://ecommerce.routemisr.com/api/v1/cart`,
         {headers:headers}
         ).then((response)=>response)
         .catch((error)=>error)
     }
     function removeItem(productId){
-      return axios.delete(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}`,
+      return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
       {headers:headers}
       ).then((response)=>response)
       .catch((error)=>error)
   }
   function updateProductCount(productId,count){
-    return axios.put(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}`,
+    return axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     {
       count:count
     },{
@@ -52,7 +52,7 @@ export function CartContextProvider(props){
     .catch((error)=>error)
 }
 function clearUserCart(){
-  return axios.delete(`https://route-ecommerce.onrender.com/api/v1/cart`,
+  return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart`,
   {
     headers:headers
   }
@@ -61,7 +61,7 @@ function clearUserCart(){
 }
 
 function onlinePayment(cartId,shippingAddress){
-  return axios.post(`https://route-ecommerce.onrender.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000`,
+  return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000`,
   {
     shippingAddress:shippingAddress
   },

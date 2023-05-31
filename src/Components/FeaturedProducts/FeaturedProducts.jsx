@@ -22,7 +22,7 @@ import $ from 'jquery'
   console.log(response);
  }
   async function getProducts(){
-   let {data} = await axios.get(`https://route-ecommerce.onrender.com/api/v1/products`);
+   let {data} = await axios.get(`https://ecommerce.routemisr.com/api/v1/products`);
    setproducts(data.data);
   //  console.log(data.data);
   $('.loading').fadeOut(2000);

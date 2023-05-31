@@ -9,7 +9,7 @@
   let navigate = useNavigate();
   async function handlePassword(values){
     setloading(true)
-    let {data} = await  axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/forgotPasswords`,values)
+    let {data} = await  axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,values)
     setloading(false) 
     console.log(data);
     navigate('/verifyCode')

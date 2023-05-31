@@ -11,7 +11,7 @@ import styles from '../Register/Register.module.css'
   const [msgError, setmsgError] = useState('')
   async function handleRegister(values){
   setloading(true)
-  let {data} = await  axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/signup`,values).catch((err)=>{
+  let {data} = await  axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`,values).catch((err)=>{
     setloading(false) 
   setmsgError(`${err.response.data.errors.param} : ${err.response.data.errors.msg}`)
   })

@@ -8,7 +8,7 @@ import Slider from "react-slick";
     let parmas = useParams();
     console.log(parmas);
    async function getCategories(){
-    let {data} = await axios.get(`https://route-ecommerce.onrender.com/api/v1/categories`)
+    let {data} = await axios.get(`https://ecommerce.routemisr.com/api/v1/categories`)
     setcategories(data.data);
     }
     useEffect(()=>{

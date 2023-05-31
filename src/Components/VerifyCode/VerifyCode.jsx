@@ -9,7 +9,7 @@ import { Formik, useFormik } from 'formik'
   let navigate = useNavigate();
   async function ResetCode(values){
     setloading(true)
-    let {data} = await  axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/verifyResetCode`,values).catch((err)=>{
+    let {data} = await  axios.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,values).catch((err)=>{
       console.log(err);
       setmsgError(err.response.data.message)
       setloading(false)

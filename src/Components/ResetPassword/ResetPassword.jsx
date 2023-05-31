@@ -11,7 +11,7 @@ import axios from 'axios'
 
   async function handleLogin(values){
   setloading(true)
-  let {data} = await  axios.put(`https://route-ecommerce.onrender.com/api/v1/auth/resetPassword`,values).catch((err)=>{
+  let {data} = await  axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,values).catch((err)=>{
       console.log(err);
       setmsgError(err.response.data.message)
       setloading(false)
